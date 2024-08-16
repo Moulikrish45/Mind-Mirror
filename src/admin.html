@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Firebase scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+    <script src="./assets/js/admin.js" type="module"></script>
+    <link rel="stylesheet" href="./assets/css/style1.css">
+</head>
+<body>
+    
+    <div id="progressIndicator" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+          <div class="loader"></div>
+        </div>
+      </div>
+      <div uk-margin class="uk-flex uk-flex-center uk-flex-middle" style="height: 100vh;">
+        <button class="uk-button uk-button-default" id="excel">Download excel</button> 
+      </div>
+      <div uk-margin class="log">
+        
+        <button class="uk-button uk-button-default" id="logout">Logout</button>
+       
+      </div>
+
+      <div id="snackbar"></div>
+</body>
+</html>

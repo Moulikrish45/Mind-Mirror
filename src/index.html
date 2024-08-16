@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMirror-Know Yourself</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="assets/images/Logo.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comforter+Brush&family=Heebo:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+
+</head>
+
+<body id="top">
+
+
+  <!-- <header class="header" data-header>
+    <div class="container">
+
+      <a href="#">
+        <h1 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif ; padding-top: 0;"><img src="./assets/images/Logo_personality.png" width="150px" height="100px"/></h1>
+      </a>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <ion-icon name="menu-outline" class="open"></ion-icon>
+        <ion-icon name="close-outline" class="close"></ion-icon>
+      </button>
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+        </ul>
+        <a href="#" class="btn btn-secondary">Theory of Mind Test</a>
+      </nav>
+    </div>
+  </header> -->
+
+  <nav class="uk-navbar-container">
+    <div class="uk-container">
+        <div uk-navbar>
+
+            <div class="uk-navbar-left">
+
+                <a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home"><img src="assets/images/Logo_personality.png" alt="" style="height: 40px;";></a>
+                <div class="uk-navbar-item">
+                    <!-- <form action="javascript:void(0)">
+                        <input class="uk-input uk-form-width-small" type="text" placeholder="Input" aria-label="Input" style="visibility: hidden;">
+                        
+                    </form> -->
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero"
+        style="background-image: url('./assets/images/hero-bg-bottom.png') url('./assets/images/hero-bg-top.png')">
+        <div class="container">
+
+          <img src="./assets/images/shape-1.png" width="61" height="61" alt="Vector Shape" class="shape shape-1">
+
+          <img src="./assets/images/shape-2.png" width="56" height="74" alt="Vector Shape" class="shape shape-2">
+
+          <img src="./assets/images/shape-3.png" width="57" height="72" alt="Vector Shape" class="shape shape-3">
+
+          <div class="hero-content">
+
+            <p class="section-subtitle">Know Youself</p>
+
+            <h2 class="hero-title">Discover your Inner Spark</h2>
+
+            <p class="hero-text">
+              "Knowing yourself is the beginning of all wisdom." - Aristotle
+            </p>
+
+            <div class="btn-group">
+              <a href="#" class="btn btn-primary" id="test">Take a Test</a>
+
+              <a href="https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator#/media/File:MyersBriggsTypes.png" class="btn btn-outline" id="learn">Learn More</a>
+            </div>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="assets/images/Mirror_person.png" width="686" height="812" loading="lazy" alt="hero banner"
+              class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #DESTINATION
+      -->
+
+      <section class="section destination">
+        <div class="container">
+
+          <p class="section-subtitle">Types of</p>
+
+          <h2 class="h2 section-title">Personalities</h2>
+          
+          <ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-fade">
+            <li>
+              <a href="#" onclick="filterSelection('nature')">
+                Analysts
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="filterSelection('nature')">
+                Diplomats
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="filterSelection('nature')">
+                Sentinels
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="filterSelection('nature')">
+                Explorer's
+              </a>
+            </li>
+        </ul>
+        
+        <ul class="uk-switcher uk-margin">
+            <li>
+              <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-hover uk-card-body">
+                      <img src="./assets/images/Architects.svg" alt="">
+                        <h3 class="uk-card-title">
+                          Architects
+                        </h3>
+                        <p>INTJ-A / INTJ-T</p>
+                    </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Logician.svg" alt="">
+                      <h3 class="uk-card-title">
+                        Logicians
+                      </h3>
+                      <p>INTP-A / INTP-T </p>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Commander.svg" alt="">
+                      <h3 class="uk-card-title">
+                        Commander
+                      </h3>
+                      <p>ENTJ-A / ENTJ-T</p>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Debater.svg" alt="">
+                      <h3 class="uk-card-title">
+                        Debater
+                      </h3>
+                      <p>ENTP-A / ENTP-T</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-hover uk-card-body">
+                      <img src="./assets/images/Advocate.svg" alt="">
+                        <h3 class="uk-card-title">
+                          Advocate 
+                        </h3>
+                        <p>INFJ-A / INFJ-T</p>
+                    </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Mediator.svg" alt="">
+                      <h3 class="uk-card-title">
+                        Mediator
+                      </h3>
+                      <p>INFP-A / INFP-T</p>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Protagonist.svg" alt="">
+                      <h3 class="uk-card-title">
+                        Protagonist
+                      </h3>
+                      <p>ENFJ-A / ENFJ-T</p>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Campaigner.svg" alt="">
+                      <h3 class="uk-card-title">
+                        Campaigner
+                      </h3>
+                      <p>ENFP-A/ENFP-T</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-hover uk-card-body">
+                      <img src="./assets/images/Logisticians.svg" alt="">
+                        <h3 class="uk-card-title">Logistician</h3>
+                        <p>ISTJ-A/ISTJ-T</p>
+                    </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Defender.svg" alt="">
+                      <h3 class="uk-card-title">Defender</h3>
+                      <p>ISFJ-A/ISFJ-T</p>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Executive.svg" alt="">
+                      <h3 class="uk-card-title">Executive</h3>
+                      <p>ESTJ-A/ESTJ-T</p>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Consul.svg" alt="">
+                      <h3 class="uk-card-title">Consul</h3>
+                      <p>ESFJ-A/ESFJ-T</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-hover uk-card-body">
+                      <img src="./assets/images/Virtuosa.svg" alt="">
+                        <h3 class="uk-card-title">Virtuosa</h3>
+                        <p>ISTP-A/ISTP-T</p>
+                    </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Adventurer.svg" alt="">
+                      <h3 class="uk-card-title">Adventurer</h3>
+                      <p>ISFP-A/ISFP-T</p>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Entrepreneur.svg" alt="">
+                      <h3 class="uk-card-title">Entreprenuer</h3>
+                      <p>ESTP-A/ESTP-T</p>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-hover uk-card-body">
+                    <img src="./assets/images/Architects.svg" alt="">
+                      <h3 class="uk-card-title">Entertainer</h3>
+                      <p>ESFP-A/ESFP-T</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+        </ul>
+          <!-- <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')">All Types</button>
+            <button class="btn" onclick="filterSelection('nature')">Analysts</button>
+            <button class="btn" onclick="filterSelection('cars')">Diplomats</button>
+            <button class="btn" onclick="filterSelection('people')">Sentinels</button>
+            <button class="btn" onclick="filterSelection('lubby')">Explorer's</button>
+          </div> -->
+          
+
+<!-- Gallery Grid -->
+<!-- <div class="row">
+  
+</div> -->
+</div>
+      </section>
+
+
+  <a href="#top" class="go-top" data-go-top aria-label="Go To Top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+  <script src="./assets/js/index.js"></script>

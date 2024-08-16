@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <link rel="shortcut icon" href="assets/images/Logo.png" type="image/svg+xml">
+  <title>Quiz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/pers.css">
+    <script src = "./assets/js/sixteenchecker.js" defer></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit-icons.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+<body>
+   <div class="uk-section">
+    <div class="uk-container">
+        <div class="question-container" >
+            
+            <div class="options">
+                <form action="pers_quiz.html" id="data-form" method="POST">
+                    <fieldset class = "ques-options" name="q1">
+                        <div class="ques">
+                            <h3></h3>
+                        </div>
+                        <div class="ops">
+                            <label class="q1op-1" for="1-op-1"><input type="radio" class="radiobtn" name="answer1" id= "1-op-1" value="-3"></label>
+                            <label class="q1op-2" for="1-op-2"><input type="radio" class="radiobtn" name="answer1" id= "1-op-2" value="-2"></label>
+                            <label class="q1op-3" for="1-op-3"><input type="radio" class="radiobtn" name="answer1" id= "1-op-3" value="-1"></label>
+                            <label class="q1op-4" for="1-op-4"><input type="radio" class="radiobtn" name="answer1" id= "1-op-4" value="0" checked></label>
+                            <label class="q1op-5" for="1-op-5"><input type="radio" class="radiobtn" name="answer1" id= "1-op-5" value="1"></label>
+                            <label class="q1op-6" for="1-op-6"><input type="radio" class="radiobtn" name="answer1" id= "1-op-6" value="2"></label>
+                            <label class="q1op-7" for="1-op-7"><input type="radio" class="radiobtn" name="answer1" id= "1-op-7" value="3"></label>
+                        </div>
+                        <div class="uk-clearfix">
+                            <div class="uk-float-left">
+                                <div class="">
+                                    <b class="text-label">
+                                        Agree
+                                    </b>
+                                </div>
+                            </div>
+                            <div class="uk-float-right">
+                                <div class="">
+                                    <b class="text-label1">
+                                        Disagree
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </fieldset>    
+                    
+                    <fieldset class = "ques-options" name="q2">
+                        <div class="ques">
+                            <h3></h3>
+                        </div>
+                        <div class="ops">
+                            <label class="q1op-1" for="2-op-1"><input type="radio" class="radiobtn" name="answer2" id= "2-op-1" value="-3"></label>
+                            <label class="q1op-2" for="2-op-2"><input type="radio" class="radiobtn" name="answer2" id= "2-op-2" value="-2"></label>
+                            <label class="q1op-3" for="2-op-3"><input type="radio" class="radiobtn" name="answer2" id= "2-op-3" value="-1"></label>
+                            <label class="q1op-4" for="2-op-4"><input type="radio" class="radiobtn" name="answer2" id= "2-op-4" value="0" checked></label>
+                            <label class="q1op-5" for="2-op-5"><input type="radio" class="radiobtn" name="answer2" id= "2-op-5" value="1"></label>
+                            <label class="q1op-6" for="2-op-6"><input type="radio" class="radiobtn" name="answer2" id= "2-op-6" value="2"></label>
+                            <label class="q1op-7" for="2-op-7"><input type="radio" class="radiobtn" name="answer2" id= "2-op-7" value="3"></label>
+                        </div>
+                        <div class="uk-clearfix">
+                            <div class="uk-float-left">
+                                <div class="">
+                                    <b class="text-label">
+                                        Agree
+                                    </b>
+                                </div>
+                            </div>
+                            <div class="uk-float-right">
+                                <div class="">
+                                    <b class="text-label1">
+                                        Disagree
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset> 
+                    
+                    <fieldset class = "ques-options" name="q3">
+                        <div class="ques">
+                            <h3></h3>
+                        </div>
+                        <div class="ops">
+                            <label class="q1op-1" for="3-op-1"><input type="radio" class="radiobtn" name="answer3" id= "3-op-1" value="-3"></label>
+                            <label class="q1op-2" for="3-op-2"><input type="radio" class="radiobtn" name="answer3" id= "3-op-2" value="-2"></label>
+                            <label class="q1op-3" for="3-op-3"><input type="radio" class="radiobtn" name="answer3" id= "3-op-3" value="-1"></label>
+                            <label class="q1op-4" for="3-op-4"><input type="radio" class="radiobtn" name="answer3" id= "3-op-4" value="0" checked></label>
+                            <label class="q1op-5" for="3-op-5"><input type="radio" class="radiobtn" name="answer3" id= "3-op-5" value="1"></label>
+                            <label class="q1op-6" for="3-op-6"><input type="radio" class="radiobtn" name="answer3" id= "3-op-6" value="2"></label>
+                            <label class="q1op-7" for="3-op-7"><input type="radio" class="radiobtn" name="answer3" id= "3-op-7" value="3"></label>
+                        </div>
+                        <div class="uk-clearfix">
+                            <div class="uk-float-left">
+                                <div class="">
+                                    <b class="text-label">
+                                        Agree
+                                    </b>
+                                </div>
+                            </div>
+                            <div class="uk-float-right">
+                                <div class="">
+                                    <b class="text-label1">
+                                        Disagree
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>    
+
+                    <fieldset class = "ques-options" id="q4">
+                        <div class="ques">
+                            <h3></h3>
+                        </div>
+                        <div class="ops">
+                            <label class="q1op-1" for="4-op-1"><input type="radio" class="radiobtn" name="answer4" id= "4-op-1" value="-3"></label>
+                            <label class="q1op-2" for="4-op-2"><input type="radio" class="radiobtn" name="answer4" id= "4-op-2" value="-2"></label>
+                            <label class="q1op-3" for="4-op-3"><input type="radio" class="radiobtn" name="answer4" id= "4-op-3" value="-1"></label>
+                            <label class="q1op-4" for="4-op-4"><input type="radio" class="radiobtn" name="answer4" id= "4-op-4" value="0" checked></label>
+                            <label class="q1op-5" for="4-op-5"><input type="radio" class="radiobtn" name="answer4" id= "4-op-5" value="1"></label>
+                            <label class="q1op-6" for="4-op-6"><input type="radio" class="radiobtn" name="answer4" id= "4-op-6" value="2"></label>
+                            <label class="q1op-7" for="4-op-7"><input type="radio" class="radiobtn" name="answer4" id= "4-op-7" value="3"></label>
+                    
+                        </div>
+                        <div class="uk-clearfix">
+                            <div class="uk-float-left">
+                                <div class="">
+                                    <b class="text-label">
+                                        Agree
+                                    </b>
+                                </div>
+                            </div>
+                            <div class="uk-float-right">
+                                <div class="">
+                                    <b class="text-label1">
+                                        Disagree
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                        </fieldset>    
+
+                    <fieldset class = "ques-options" id="q5">
+                        <div class="ques">
+                            <h3></h3>
+                        </div>
+                        <div class="ops">
+                            <label class="q1op-1" for="5-op-1"><input type="radio" class="radiobtn" name="answer5" id= "5-op-1" value="-3"></label>
+                            <label class="q1op-2" for="5-op-2"><input type="radio" class="radiobtn" name="answer5" id= "5-op-2" value="-2"></label>
+                            <label class="q1op-3" for="5-op-3"><input type="radio" class="radiobtn" name="answer5" id= "5-op-3" value="-1"></label>
+                            <label class="q1op-4" for="5-op-4"><input type="radio" class="radiobtn" name="answer5" id= "5-op-4" value="0" checked></label>
+                            <label class="q1op-5" for="5-op-5"><input type="radio" class="radiobtn" name="answer5" id= "5-op-5" value="1"></label>
+                            <label class="q1op-6" for="5-op-6"><input type="radio" class="radiobtn" name="answer5" id= "5-op-6" value="2"></label>
+                            <label class="q1op-7" for="5-op-7"><input type="radio" class="radiobtn" name="answer5" id= "5-op-7" value="3"></label>
+                        </div> 
+                        <div class="uk-clearfix">
+                            <div class="uk-float-left">
+                                <div class="">
+                                    <b class="text-label">
+                                        Agree
+                                    </b>
+                                </div>
+                            </div>
+                            <div class="uk-float-right">
+                                <div class="">
+                                    <b class="text-label1">
+                                        Disagree
+                                    </b>
+                                </div>
+                            </div>
+                        </div>   
+                    </fieldset>   
+                    
+                    <fieldset class = "ques-options" id="q6">
+                        <div class="ques">
+                            <h3></h3>
+                        </div>
+                        <div class="ops">
+                            <label class="q1op-1" for="6-op-1"><input type="radio" class="radiobtn" name="answer6" id= "6-op-1" value="-3"></label>
+                            <label class="q1op-2" for="6-op-2"><input type="radio" class="radiobtn" name="answer6" id= "6-op-2" value="-2"></label>
+                            <label class="q1op-3" for="6-op-3"><input type="radio" class="radiobtn" name="answer6" id= "6-op-3" value="-1"></label>
+                            <label class="q1op-4" for="6-op-4"><input type="radio" class="radiobtn" name="answer6" id= "6-op-4" value="0" checked></label>
+                            <label class="q1op-5" for="6-op-5"><input type="radio" class="radiobtn" name="answer6" id= "6-op-5" value="1"></label>
+                            <label class="q1op-6" for="6-op-6"><input type="radio" class="radiobtn" name="answer6" id= "6-op-6" value="2"></label>
+                            <label class="q1op-7" for="6-op-7"><input type="radio" class="radiobtn" name="answer6" id= "6-op-7" value="3"></label>
+                        </div>
+                        <div class="uk-clearfix">
+                            <div class="uk-float-left">
+                                <div class="">
+                                    <b class="text-label">
+                                        Agree
+                                    </b>
+                                </div>
+                            </div>
+                            <div class="uk-float-right">
+                                <div class="">
+                                    <b class="text-label1">
+                                        Disagree
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>    
+                    <button id ="next" class="uk-button uk-align-center" type="submit">Next</button>
+                </form>
+            </div>
+        </div>
+
+        
+    </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <link rel="shortcut icon" href="assets/images/Logo.png" type="image/svg+xml">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Test Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f7f7f7, #e0e0e0);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #result-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        #personalityImage {
+            align-self: center;
+            align-content: center;
+            align-items: center;
+            margin-left: 120px;
+            max-width: 150px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        #description {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #555;
+        }
+        #learnMore {
+            display: none;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #1e90ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        #learnMore:hover {
+            color: #0066cc;
+            border-bottom: 1px solid #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div id="result-container">
+        <h1>Your Personality Type</h1>
+        <div id="result"></div>
+        <img id="personalityImage" src="" alt="Personality Type Image" style="display:none;">
+        <div id="description"></div>
+        <a id="learnMore" href="#" target="_blank">Learn more</a>
+    </div>
+
+    <script>
+        const personalityInfo = {
+            "ENTJ-T": {
+                "image": "assets/images/Commander.svg",
+                "alt": "ENTJ Commander Personality Type",
+                "description": "ENTJs are bold, imaginative, and strong-willed leaders, always finding a way—or making one.",
+                "link": "https://en.wikipedia.org/wiki/Commander_(ENTJ)"
+            },
+            "ENTJ-A": {
+                "image": "assets/images/Commander.svg",
+                "alt": "ENTJ Commander Personality Type",
+                "description": "ENTJs are bold, imaginative, and strong-willed leaders, always finding a way—or making one.",
+                "link": "https://en.wikipedia.org/wiki/Commander_(ENTJ)"
+            },
+            "INTJ-T": {
+                "image": "assets/images/Logician.svg",
+                "alt": "INTJ Architect Personality Type",
+                "description": "INTJs are strategic thinkers, motivated by their desire to understand complex systems and abstract concepts.",
+                "link": "https://en.wikipedia.org/wiki/Architect_(INTJ)"
+            },
+            "INTJ-A": {
+                "image": "assets/images/Logician.svg",
+                "alt": "INTJ Architect Personality Type",
+                "description": "INTJs are strategic thinkers, motivated by their desire to understand complex systems and abstract concepts.",
+                "link": "https://en.wikipedia.org/wiki/Architect_(INTJ)"
+            },
+            "ENTP-T": {
+                "image": "assets/images/Debater.svg",
+                "alt": "ENTP Debater Personality Type",
+                "description": "ENTPs are quick-witted and love a mental challenge, constantly seeking to push boundaries.",
+                "link": "https://en.wikipedia.org/wiki/Debater_(ENTP)"
+            },
+            "ENTP-A": {
+                "image": "assets/images/Debater.svg",
+                "alt": "ENTP Debater Personality Type",
+                "description": "ENTPs are quick-witted and love a mental challenge, constantly seeking to push boundaries.",
+                "link": "https://en.wikipedia.org/wiki/Debater_(ENTP)"
+            },
+            "ENFP-T": {
+                "image": "assets/images/Campaigner.svg",
+                "alt": "ENFP Campaigner Personality Type",
+                "description": "ENFPs are enthusiastic, creative, and sociable free spirits who can always find a reason to smile.",
+                "link": "https://en.wikipedia.org/wiki/Campaigner_(ENFP)"
+            },
+            "ENFP-A": {
+                "image": "assets/images/Campaigner.svg",
+                "alt": "ENFP Campaigner Personality Type",
+                "description": "ENFPs are enthusiastic, creative, and sociable free spirits who can always find a reason to smile.",
+                "link": "https://en.wikipedia.org/wiki/Campaigner_(ENFP)"
+            },
+            "INFJ-T": {
+                "image": "assets/images/Protagonist.svg",
+                "alt": "INFJ Advocate Personality Type",
+                "description": "INFJs are insightful, imaginative, and passionate people, driven by their core values and beliefs.",
+                "link": "https://en.wikipedia.org/wiki/Advocate_(INFJ)"
+            },
+            "INFJ-A": {
+                "image": "assets/images/Protagonist.svg",
+                "alt": "INFJ Advocate Personality Type",
+                "description": "INFJs are insightful, imaginative, and passionate people, driven by their core values and beliefs.",
+                "link": "https://en.wikipedia.org/wiki/Advocate_(INFJ)"
+            },
+            "ISFJ-T": {
+                "image": "assets/images/Defender.svg",
+                "alt": "ISFJ Defender Personality Type",
+                "description": "ISFJs are dedicated and warm protectors, ready to defend their loved ones at any cost.",
+                "link": "https://en.wikipedia.org/wiki/Defender_(ISFJ)"
+            },
+            "ISFJ-A": {
+                "image": "assets/images/Defender.svg",
+                "alt": "ISFJ Defender Personality Type",
+                "description": "ISFJs are dedicated and warm protectors, ready to defend their loved ones at any cost.",
+                "link": "https://en.wikipedia.org/wiki/Defender_(ISFJ)"
+            },
+            "ISTJ-T": {
+                "image": "assets/images/Logisticians.svg",
+                "alt": "ISTJ Logistician Personality Type",
+                "description": "ISTJs are practical and fact-minded individuals, whose reliability cannot be doubted.",
+                "link": "https://en.wikipedia.org/wiki/Logistician_(ISTJ)"
+            },
+            "ISTJ-A": {
+                "image": "assets/images/Logisticians.svg",
+                "alt": "ISTJ Logistician Personality Type",
+                "description": "ISTJs are practical and fact-minded individuals, whose reliability cannot be doubted.",
+                "link": "https://en.wikipedia.org/wiki/Logistician_(ISTJ)"
+            },
+            "ESFJ-T": {
+                "image": "assets/images/Consul.svg",
+                "alt": "ESFJ Consul Personality Type",
+                "description": "ESFJs are caring and popular people, always eager to help and support their loved ones.",
+                "link": "https://en.wikipedia.org/wiki/Consul_(ESFJ)"
+            },
+            "ESFJ-A": {
+                "image": "assets/images/Consul.svg",
+                "alt": "ESFJ Consul Personality Type",
+                "description": "ESFJs are caring and popular people, always eager to help and support their loved ones.",
+                "link": "https://en.wikipedia.org/wiki/Consul_(ESFJ)"
+            },
+            "ISTP-T": {
+                "image": "assets/images/Virtuosa.svg",
+                "alt": "ISTP Virtuoso Personality Type",
+                "description": "ISTPs are bold and practical experimenters, masters of all kinds of tools.",
+                "link": "https://en.wikipedia.org/wiki/Virtuoso_(ISTP)"
+            },
+            "ISTP-A": {
+                "image": "assets/images/Virtuosa.svg",
+                "alt": "ISTP Virtuoso Personality Type",
+                "description": "ISTPs are bold and practical experimenters, masters of all kinds of tools.",
+                "link": "https://en.wikipedia.org/wiki/Virtuoso_(ISTP)"
+            },
+            "ISFP-T": {
+                "image": "assets/images/Virtuosa.svg",
+                "alt": "ISFP Adventurer Personality Type",
+                "description": "ISFPs are flexible and charming artists, always ready to explore and experience new things.",
+                "link": "https://en.wikipedia.org/wiki/Adventurer_(ISFP)"
+            },
+            "ISFP-A": {
+                "image": "assets/images/Virtuosa.svg",
+                "alt": "ISFP Adventurer Personality Type",
+                "description": "ISFPs are flexible and charming artists, always ready to explore and experience new things.",
+                "link": "https://en.wikipedia.org/wiki/Adventurer_(ISFP)"
+            }
+        };
+
+        const resultContainer = document.getElementById('result');
+        const personalityImage = document.getElementById('personalityImage');
+        const description = document.getElementById('description');
+        const learnMoreLink = document.getElementById('learnMore');
+
+        const personalityType = "ENTJ-T"; // Replace with dynamic value
+
+        if (personalityInfo[personalityType]) {
+            const info = personalityInfo[personalityType];
+            resultContainer.innerText = personalityType;
+            personalityImage.src = info.image;
+            personalityImage.alt = info.alt;
+            personalityImage.style.display = "block";
+            description.innerText = info.description;
+            learnMoreLink.href = info.link;
+            learnMoreLink.style.display = "block";
+        } else {
+            resultContainer.innerText = "Unknown Personality Type";
+        }
+    </script>
+</body>
+</html>
